@@ -4,7 +4,8 @@ import start_app
 import connection
 import check_json
 from pydantic import BaseModel 
-import json 
+import json
+import uvicorn
 
 app = connection.app
 
@@ -81,3 +82,6 @@ async def save_oi_pcr_avg(data: OIPCRAvgData):
         return {print("oi_PCR_avg and current time values saved successfully.")}
     except Exception as e:
         raise HTTPException(status_code=500, detail="Error saving oi_PCR_avg and current time values.")
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True)
