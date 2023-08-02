@@ -1,11 +1,15 @@
 import connection
 import fetch 
 import asyncio
+import os
 
 app = connection.app 
 
 @app.on_event("startup")
 async def startup_event():
+    #timezone set
+    os.environ['TZ'] = 'Asia/Calcutta'
+
     url = "https://groww.in/v1/api/option_chain_service/v1/option_chain/nifty?expiry=2023-08-03"  
     url_next = "https://groww.in/v1/api/option_chain_service/v1/option_chain/nifty?expiry=2023-08-10"
     url_far = "https://groww.in/v1/api/option_chain_service/v1/option_chain/nifty?expiry=2023-08-31"
