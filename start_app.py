@@ -11,8 +11,8 @@ async def startup_event():
     os.environ['TZ'] = 'Asia/Calcutta'
 
     url = "https://groww.in/v1/api/option_chain_service/v1/option_chain/nifty?expiry=2023-08-10"  
-    url_next = "https://groww.in/v1/api/option_chain_service/v1/option_chain/nifty?expiry=2023-08-31"
-    url_far = "https://groww.in/v1/api/option_chain_service/v1/option_chain/nifty?expiry=2023-09-07"
+    url_next = "https://groww.in/v1/api/option_chain_service/v1/option_chain/nifty?expiry=2023-08-17"
+    url_far = "https://groww.in/v1/api/option_chain_service/v1/option_chain/nifty?expiry=2023-08-24"
     filename = "dw_data.json"  
     filename_next = "dw_data_next.json"
     filename_far = "dw_data_far.json"
